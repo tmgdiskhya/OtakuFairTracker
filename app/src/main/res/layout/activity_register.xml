@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@drawable/gradient"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/tvStarted"
+        android:text="Let's get you started!!!"
+       android:gravity="center"
+        android:layout_marginTop="110dp"
+        android:textSize="29dp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvFullname"
+        android:text="Full Name:"
+        android:textSize="20dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etFullname"
+        android:layout_marginLeft="233dp"
+        android:layout_marginTop="-21dp"
+        android:layout_width="135dp"
+        android:layout_height="15dp"/>
+    <TextView
+        android:id="@+id/tvUsername"
+        android:text="Username:"
+        android:textSize="20dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_marginLeft="233dp"
+        android:layout_marginTop="-21dp"
+        android:layout_width="135dp"
+        android:layout_height="15dp"/>
+    <TextView
+        android:id="@+id/tvEmail"
+        android:text="Email:"
+        android:textSize="20dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_marginLeft="233dp"
+        android:layout_marginTop="-21dp"
+        android:layout_width="135dp"
+        android:layout_height="15dp"/>
+    <TextView
+        android:id="@+id/tvPassword"
+        android:text="Password:"
+        android:textSize="20dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_marginLeft="233dp"
+        android:layout_marginTop="-21dp"
+        android:layout_width="135dp"
+        android:layout_height="15dp"/>
+    <Button
+        android:id="@+id/btnAccount"
+        android:text="Create Acount"
+        android:layout_marginLeft="165dp"
+        android:background="@drawable/custombutton"
+        android:layout_marginTop="115dp"
+        android:layout_width="160dp"
+        android:layout_height="45dp"/>
+    <TextView
+        android:id="@+id/tvAlready"
+        android:text="Already have an account?? Log in"
+        android:layout_marginLeft="135dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+
+

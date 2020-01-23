@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
+    tools:context=".Login_Activity">
+
+
+    <ImageView
+        android:id="@+id/ivOtakuimg"
+        android:layout_width="143dp"
+        android:layout_height="157dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-165dp"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/ivUserimg"
+        android:layout_width="85dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/usericon" />
+
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="145dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Username" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="145dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Password" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Login"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_width="120dp"
+        android:background="@drawable/custombutton"
+        android:layout_height="45dp"/>
+
+    <TextView
+        android:id="@+id/tvSentence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Don't have an account? Register"/>
+
+
+
+
+</LinearLayout>
