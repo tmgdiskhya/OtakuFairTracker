@@ -11,6 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.otakufairtracker.api.UserApi;
+import com.example.otakufairtracker.model.User;
+import com.example.otakufairtracker.serverResponse.LoginSignupResponse;
+import com.example.otakufairtracker.url.url;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Login_Activity extends AppCompatActivity {
     private EditText etUsername, etPassword;
     private Button btnLogin;
@@ -37,18 +46,32 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     private void Login(){
-        SharedPreferences sharedPreferences = getSharedPreferences("User", MODE_PRIVATE);
-        String username = sharedPreferences.getString("username", "");
-        String password = sharedPreferences.getString("password", "");
-        if (username.equals(etUsername.getText().toString())||
-                password.equals(etPassword.getText().toString())){
-            Toast.makeText(Login_Activity.this, "Successful",
-                    Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(Login_Activity.this, "Either Username or Password you have typed is incorrect",
-                    Toast.LENGTH_SHORT).show();
-        }
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
+//                loginBll loginBll = new loginBll();
+//                StrictMode.StrictMode();
+//                boolean check = loginBll.checkUser(username, password);
+        User user = new User(username, password);
+        UserApi userApi = url.getInstance().create(UserApi.class);
+        Call<LoginSignupResponse> call = userApi.checkUser(user);
+        call.enqueue(new Callback<LoginSignupResponse>() {
+            @Override
+            public void onResponse(Call<LoginSignupResponse> call, Response<LoginSignupResponse> response) {
+                if(response.body().getStatus()){
+                    Toast.makeText(Login_Activity.this, "login Successful ", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(Login_Activity.this, "Either Username or Password is Incorrect ", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginSignupResponse> call, Throwable t) {
+                Toast.makeText(Login_Activity.this, "login UnSuccessful "+t, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
     }
 }
